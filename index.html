@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Home Depot – $750 Gift Card</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #ebebeb;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 430px;
+      height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 10px 10px;
+      gap: 7px;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+    }
+
+    .brand-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #F96302;
+    }
+
+    .brand-underline {
+      width: 48px;
+      height: 3px;
+      background: #F96302;
+      margin: 4px auto 8px;
+      border-radius: 2px;
+    }
+
+    .header h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a6cb5;
+      margin-bottom: 3px;
+    }
+
+    .header p {
+      font-size: 11.5px;
+      color: #666;
+    }
+
+    /* STEPS */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border-radius: 9px;
+      padding: 11px 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    }
+
+    .step-num {
+      min-width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #F96302;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 13.5px;
+      color: #222;
+    }
+
+    /* CTA */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #F9A825;
+      color: #222;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-align: center;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .cta-btn:hover { background: #e09800; }
+
+    .disclaimer {
+      text-align: center;
+      font-size: 10.5px;
+      color: #999;
+      line-height: 1.45;
+      padding: 0 6px;
+    }
+
+    /* FAQ */
+    .faq-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #F96302;
+      margin-bottom: 1px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 9px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 13px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      color: #222;
+      user-select: none;
+    }
+
+    .faq-arrow {
+      font-size: 16px;
+      color: #999;
+      transition: transform 0.22s;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 12.5px;
+      color: #555;
+      line-height: 1.5;
+      padding: 0 13px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 100px;
+      padding: 0 13px 10px;
+    }
+
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+    /* TOAST */
+    .toast {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    }
+
+    .toast-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #4CAF50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .toast-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .toast-msg {
+      font-size: 12.5px;
+      color: #222;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-title">The Home Depot</div>
+    <div class="brand-underline"></div>
+    <h2>Complete Your Registration</h2>
+    <p>Follow these steps to claim your $750 Home Depot gift card</p>
+  </div>
+
+  <!-- STEPS -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Click on "Claim Now"</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Enter your email and basic info</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">Complete 4-5 sponsored deals</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">Enjoy your $750 Home Depot gift card!</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <a href="https://giftclick.org/aff_c?offer_id=2442&aff_id=186988" class="cta-btn" target="_blank">CLAIM NOW</a>
+
+  <p class="disclaimer">By clicking "Claim Now", you agree to complete the required steps to receive your gift card.</p>
+
+  <!-- FAQ -->
+  <div class="faq-title">FAQ</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How does this work? <span class="faq-arrow">&#8964;</span>
+      </div>
+      <div class="faq-answer">Simply click "Claim Now", enter your details, and complete 4-5 sponsor deals to receive your $750 Home Depot gift card.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Is this offer legitimate? <span class="faq-arrow">&#8964;</span>
+      </div>
+      <div class="faq-answer">Yes! This is a real rewards program from our marketing partners. Thousands have already claimed their gift cards.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        What deals do I need to complete? <span class="faq-arrow">&#8964;</span>
+      </div>
+      <div class="faq-answer">Deals include free trials, app downloads, and surveys. You choose which ones to complete from the available options.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        How long does it take? <span class="faq-arrow">&#8964;</span>
+      </div>
+      <div class="faq-answer">Most users complete the required deals within 15-30 minutes. Your gift card is delivered digitally within 24-48 hours.</div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <span class="toast-msg" id="toast-msg">Patricia H. from Nashville just claimed her gift card</span>
+  </div>
+
+</div>
+
+<script>
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  const names = [
+    "Patricia H. from Nashville just claimed her gift card",
+    "Elizabeth C. from Las Vegas just claimed her gift card",
+    "Steven J. from Miami just claimed his gift card",
+    "Marcus T. from Houston just claimed his gift card",
+    "Jennifer L. from Atlanta just claimed her gift card",
+    "Robert M. from Chicago just claimed his gift card",
+    "Ashley K. from Phoenix just claimed her gift card",
+    "David W. from Dallas just claimed his gift card"
+  ];
+
+  let idx = 0;
+  setInterval(() => {
+    idx = (idx + 1) % names.length;
+    document.getElementById('toast-msg').textContent = names[idx];
+  }, 4000);
+</script>
+</body>
+</html>
